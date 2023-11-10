@@ -1,0 +1,17 @@
+services:
+  my-mongodb:
+    image: mongo
+    container_name: my-mongodb
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE=test
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+
+data-seeder:
+    build:
+      context: .
+      dockerfile: Dockerfile-seeder
+    depends_on:
+      - my-mongodb
