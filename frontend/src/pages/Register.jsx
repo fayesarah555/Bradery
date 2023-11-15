@@ -22,17 +22,20 @@ function Register() {
     }))
   }
 
- 
-    if (password !== password2) {
-      toast.error('Passwords do not match')
-    } else {
-      const userData = {
-        name,
-        email,
-        password,
-      }
-    }
+  const onSubmit = (e) =>{
+    e.preventDefault();
   }
+ 
+//     if (password !== password2) {
+//       toast.error('Passwords do not match')
+//     } else {
+//       const userData = {
+//         name,
+//         email,
+//         password,
+//       }
+//     }
+//   }
   return (
     <>
       <section className='heading'>
@@ -63,7 +66,7 @@ function Register() {
               name='email'
               value={email}
               placeholder='Enter your email'
-              onChange={onChange}
+            //   onChange={onChange}
             />
           </div>
           <div className='form-group'>
@@ -74,7 +77,7 @@ function Register() {
               name='password'
               value={password}
               placeholder='Enter password'
-              onChange={onChange}
+            //   onChange={onChange}
             />
           </div>
           <div className='form-group'>
@@ -85,7 +88,7 @@ function Register() {
               name='password2'
               value={password2}
               placeholder='Confirm password'
-              onChange={onChange}
+            //   onChange={onChange}
             />
           </div>
           <div className='form-group'>
@@ -98,5 +101,5 @@ function Register() {
     </>
   )
 
-
+  }
 export default Register
