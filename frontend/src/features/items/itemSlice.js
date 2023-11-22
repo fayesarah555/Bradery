@@ -12,8 +12,8 @@ const initialState = {
 // create new item
 export const createItem = createAsyncThunk('items/create', async (itemData, thunkAPI) => {
   try {
-    const token = thunkAPI.getState().auth.user.token;
-    return await itemService.createItem(itemData, token);
+    const token = thunkAPI.getState().auth.user.token
+    return await itemService.createItem(itemData, token)
   } catch (error) {
     const message =
       (error.response &&
@@ -23,7 +23,7 @@ export const createItem = createAsyncThunk('items/create', async (itemData, thun
       error.toString();
     return thunkAPI.rejectWithValue(message);
   }
-});
+})
 
 export const itemSlice = createSlice({
   name: 'item',

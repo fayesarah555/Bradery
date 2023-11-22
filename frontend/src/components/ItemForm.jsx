@@ -8,14 +8,17 @@ function ItemForm() {
   const [price, setPrice] = useState('');
   const dispatch = useDispatch();
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    dispatch(createItem({ name, description, price }));
+    console.log('Submitting form...');
+    await dispatch(createItem({ name, description, price }));
+    console.log('Form submitted and createItem dispatched.');
     // Reset the form fields
     setName('');
     setDescription('');
     setPrice('');
-  };
+  }
+  
 
   return (
     <section className="form">
